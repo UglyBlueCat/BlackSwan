@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "DataHandler.h"
+
+#define baseAPIURL @"http://rollthedice.setgetgo.com/get.php"
 
 @interface AppDelegate ()
+
+@property DataHandler* dataHandler;
 
 @end
 
@@ -16,7 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.dataHandler = [[DataHandler sharedInstance] initWithBaseURL:baseAPIURL];
     return YES;
 }
 

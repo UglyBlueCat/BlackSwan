@@ -14,6 +14,7 @@
 		003F8B201B65044800971D13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003F8B1F1B65044800971D13 /* Images.xcassets */; };
 		003F8B231B65044800971D13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003F8B211B65044800971D13 /* LaunchScreen.xib */; };
 		003F8B2F1B65044900971D13 /* BlackSwanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003F8B2E1B65044900971D13 /* BlackSwanTests.m */; };
+		003F8B3D1B65138400971D13 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 003F8B3C1B65138400971D13 /* DataHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		003F8B281B65044900971D13 /* BlackSwanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackSwanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003F8B2D1B65044900971D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003F8B2E1B65044900971D13 /* BlackSwanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlackSwanTests.m; sourceTree = "<group>"; };
+		003F8B3B1B65138400971D13 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		003F8B3C1B65138400971D13 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				003F8B1F1B65044800971D13 /* Images.xcassets */,
 				003F8B211B65044800971D13 /* LaunchScreen.xib */,
 				003F8B121B65044800971D13 /* Supporting Files */,
+				003F8B3B1B65138400971D13 /* DataHandler.h */,
+				003F8B3C1B65138400971D13 /* DataHandler.m */,
 			);
 			path = BlackSwan;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003F8B3D1B65138400971D13 /* DataHandler.m in Sources */,
 				003F8B1B1B65044800971D13 /* ViewController.m in Sources */,
 				003F8B181B65044800971D13 /* AppDelegate.m in Sources */,
 				003F8B151B65044800971D13 /* main.m in Sources */,
