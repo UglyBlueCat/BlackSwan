@@ -15,6 +15,7 @@
 		003F8B231B65044800971D13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003F8B211B65044800971D13 /* LaunchScreen.xib */; };
 		003F8B2F1B65044900971D13 /* BlackSwanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003F8B2E1B65044900971D13 /* BlackSwanTests.m */; };
 		003F8B3D1B65138400971D13 /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 003F8B3C1B65138400971D13 /* DataHandler.m */; };
+		3BC65913F575BEC2D2171CA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F2041740791CA76236EA44 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 		003F8B2E1B65044900971D13 /* BlackSwanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlackSwanTests.m; sourceTree = "<group>"; };
 		003F8B3B1B65138400971D13 /* DataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
 		003F8B3C1B65138400971D13 /* DataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
+		04F2041740791CA76236EA44 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F40D49BA3BC747A06EA885 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5E445B72E9045A8C56E8084B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC65913F575BEC2D2171CA6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,8 @@
 				003F8B111B65044800971D13 /* BlackSwan */,
 				003F8B2B1B65044900971D13 /* BlackSwanTests */,
 				003F8B101B65044800971D13 /* Products */,
+				A68C576537184FF074AB30BA /* Pods */,
+				69954FB612F6AFAFC8425511 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		69954FB612F6AFAFC8425511 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04F2041740791CA76236EA44 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A68C576537184FF074AB30BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42F40D49BA3BC747A06EA885 /* Pods.debug.xcconfig */,
+				5E445B72E9045A8C56E8084B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003F8B321B65044900971D13 /* Build configuration list for PBXNativeTarget "BlackSwan" */;
 			buildPhases = (
+				026859CD168C2F238F775D29 /* Check Pods Manifest.lock */,
 				003F8B0B1B65044800971D13 /* Sources */,
 				003F8B0C1B65044800971D13 /* Frameworks */,
 				003F8B0D1B65044800971D13 /* Resources */,
+				3B9A3B4FB84480917E370D3C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		026859CD168C2F238F775D29 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B9A3B4FB84480917E370D3C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		003F8B0B1B65044800971D13 /* Sources */ = {
@@ -353,6 +412,7 @@
 		};
 		003F8B331B65044900971D13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F40D49BA3BC747A06EA885 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BlackSwan/Info.plist;
@@ -363,6 +423,7 @@
 		};
 		003F8B341B65044900971D13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E445B72E9045A8C56E8084B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BlackSwan/Info.plist;
@@ -424,6 +485,7 @@
 				003F8B341B65044900971D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		003F8B351B65044900971D13 /* Build configuration list for PBXNativeTarget "BlackSwanTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +494,7 @@
 				003F8B371B65044900971D13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
