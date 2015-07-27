@@ -10,7 +10,7 @@
 
 @interface DataHandler ()
 
-@property NSURL* BaseURL;
+@property NSString* BaseURL;
 
 @end
 
@@ -31,15 +31,22 @@
 - (instancetype)initWithBaseURL:(NSString*)url {
     self = [super init];
     if (self) {
-        _BaseURL = [NSURL URLWithString:url];
+        _BaseURL = url;
     }
     return self;
 }
 
-// Fetch a simple result for a standard six-sided die, i.e. no parameters passed to the API
-- (int)fetchSimpleResult {
-    int result;
-    return result;
+- (void)rollDieWithSides:(NSString*)sides
+                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSDictionary *parameters;
+    if (sides) {
+        parameters = @{@"sides": sides};
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:self.BaseURL parameters:parameters success:success failure:failure];
 }
 
 @end

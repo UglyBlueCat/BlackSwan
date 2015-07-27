@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
 @interface DataHandler : NSObject
 
 + (DataHandler*)sharedInstance;
 - (instancetype)initWithBaseURL:(NSString*)url;
+- (void)rollDieWithSides:(NSString*)sides
+                 success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end
